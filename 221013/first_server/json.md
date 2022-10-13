@@ -109,7 +109,7 @@ An object begins with { and ends with }. An object consists of comma separated k
         "d":{
             "x":true,
             "y":false,
-            "z":null
+            "z":null,
             "w":2
         }
     }
