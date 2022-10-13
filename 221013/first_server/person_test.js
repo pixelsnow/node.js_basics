@@ -32,3 +32,30 @@ function print2(fieldname) {
 console.log("###########");
 print2("age");
 print2("firstname");
+
+console.log("########### keys ###########");
+console.log(Object.keys(person));
+console.log("########### values ###########");
+console.log(Object.values(person));
+console.log("########### entries ###########");
+console.log(Object.entries(person));
+
+console.log("########### loop keys ###########");
+for (const key of Object.keys(person)) {
+  print(key);
+}
+
+console.log("########### loop entries ###########");
+for (const [key, value] of Object.entries(person)) {
+  console.log(`for key "${key}" the value is "${value}"`);
+}
+
+console.log("########### faulty json syntax ###########");
+const person2 = {
+  // comments aren't allowed in json file,
+  // this won't work in a json file
+  firstname: "Vera",
+  lastname: "River",
+  notes: `vera is ${person.age}`,
+};
+console.log(person2);

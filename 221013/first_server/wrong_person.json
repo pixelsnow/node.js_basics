@@ -1,0 +1,6 @@
+{
+    // comments aren't allowed in json file
+    firstname: "Vera",
+    lastname: "River",
+    notes: `vera is ${person.age}`,
+};
