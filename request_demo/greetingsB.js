@@ -6,7 +6,7 @@ const { host, port } = require("./config.json");
 
 const server = http.createServer((req, res) => {
   let { searchParams } = new URL(`http://${req.headers.host}${req.url}`);
-
+  // A bit different version
   let userName = "stranger";
   if (searchParams.has("name")) {
     userName = searchParams.get("name");

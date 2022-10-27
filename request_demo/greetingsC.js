@@ -5,6 +5,8 @@ const http = require("http");
 const { host, port } = require("./config.json");
 
 const server = http.createServer((req, res) => {
+  // Without curly brackets it would take the whole object,
+  // like this it takes only searchParams
   let { searchParams } = new URL(`http://${req.headers.host}${req.url}`);
   // Version with ternary operator
   const message = searchParams.has("name")

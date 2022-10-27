@@ -17,3 +17,15 @@ result
 ```
 Hi stranger!
 ```
+
+## pathdemo
+
+```
+http://localhost:3000/hi?name=Lera
+```
+
+result
+
+```
+Hi Lera!
+```
