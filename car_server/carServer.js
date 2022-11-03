@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
   if (pathname === "/cars") {
     resultHtml = createCarsHtml(storage.getAllCars());
   } else if (pathname === "/cartypes") {
-    resultHtml = "<h1>Car types</h1>";
+    resultHtml = createCarModelsHtml(storage.getAllModels());
   } else if (pathname === "/search") {
     resultHtml = "<h1>Search</h1>";
   } else {
@@ -59,4 +59,20 @@ function createCarsHtml(cars) {
   }
   htmlString += "</body></html>";
   return htmlString;
+}
+
+function createCarModelsHtml(types) {
+  return `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Car models</title>
+    </head>
+    <body>
+      <h1>Car models</h1>
+      <ul>
+        <li>${types.join("</li><li>")}</li>
+      </ul>
+    </body>
+  </html>`;
 }
