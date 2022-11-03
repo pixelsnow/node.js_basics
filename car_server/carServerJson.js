@@ -10,19 +10,23 @@ const server = http.createServer((req, res) => {
   const { pathname, searchParams } = new URL(
     `http://${req.headers.host}${req.url}`
   );
-  let resultJson = "";
-  if (pathname === "/cars") {
+
+  // Decoding path
+  const route = decodeURIComponent(pathname); // Decoding path
+
+  let resultJson;
+  if (route === "/cars") {
     resultJson = storage.getAllCars();
-  } else if (pathname === "/cartypes") {
+  } else if (route === "/cartypes") {
     resultJson = storage.getAllModels();
-  } else if (pathname === "/search/bylicence") {
+  } else if (route === "/search/bylicence") {
     const value = searchParams.get("value");
     resultJson = storage.getCar("licence", value);
-  } else if (pathname === "/search/bymodel") {
+  } else if (route === "/search/bymodel") {
     const value = searchParams.get("value");
     resultJson = storage.getCar("model", value);
   } else {
-    resultJson = "Error";
+    resultJson = { message: "not found" };
   }
 
   res.writeHead(200, { "Content-Type": "application/json" });
