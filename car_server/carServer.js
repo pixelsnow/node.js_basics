@@ -13,8 +13,12 @@ const server = http.createServer((req, res) => {
   let resultHtml = "";
   if (pathname === "/cars") {
     resultHtml = createCarsHtml(storage.getAllCars());
+  } else if (pathname === "/cartypes") {
+    resultHtml = "<h1>Car types</h1>";
+  } else if (pathname === "/search") {
+    resultHtml = "<h1>Search</h1>";
   } else {
-    res.end(); // this will be changed later
+    resultHtml = "<h1>Error</h1>";
   }
 
   res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
@@ -26,5 +30,33 @@ server.listen(port, host, () =>
 );
 
 function createCarsHtml(cars) {
-  return `<pre>${cars}</pre>`;
+  let htmlString = `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Cars</title>
+    </head>
+    <body>
+      <h1>Search result</h1>`;
+  if (!cars.length) {
+    htmlString += "<h2>No cars found</h2>";
+  } else {
+    htmlString += `<table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Licence</th>
+      </tr>
+    </thead>
+    <tbody>`;
+    for (const car of cars) {
+      htmlString += `<tr>
+        <td>${car.model}</td>
+        <td>${car.licence}</td>
+        </tr>`;
+    }
+    htmlString += "</tbody></table>";
+  }
+  htmlString += "</body></html>";
+  return htmlString;
 }
