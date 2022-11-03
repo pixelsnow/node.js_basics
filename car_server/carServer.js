@@ -15,8 +15,12 @@ const server = http.createServer((req, res) => {
     resultHtml = createCarsHtml(storage.getAllCars());
   } else if (pathname === "/cartypes") {
     resultHtml = createCarModelsHtml(storage.getAllModels());
-  } else if (pathname === "/search") {
-    resultHtml = "<h1>Search</h1>";
+  } else if (pathname === "/search/bylicence") {
+    const value = searchParams.get("value");
+    resultHtml = createCarsHtml(storage.getCar("licence", value));
+  } else if (pathname === "/search/bymodel") {
+    const value = searchParams.get("value");
+    resultHtml = createCarsHtml(storage.getCar("model", value));
   } else {
     resultHtml = "<h1>Error</h1>";
   }
