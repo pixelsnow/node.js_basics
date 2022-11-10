@@ -9,7 +9,7 @@ const { sendFile } = require("./library/utilities");
 const { search } = require("./storage/personDataLayer");
 
 const port = process.env.PORT || 3000;
-const host = process.env.HOST || localhost;
+const host = process.env.HOST || "localhost";
 
 const homePath = path.join(__dirname, "home.html");
 
