@@ -22,6 +22,7 @@ server.listen(port, host, () =>
 async function sendFile(res, filePath) {
   try {
     const data = await fs.promises.readFile(homePath, "utf8");
+    // const data = await fs.readFile(homePath, "utf8");  // FOR THE require("fs").promises VERSION
     res.writeHead(200, {
       "Content-Type": "text/html",
       "Content-Length": Buffer.byteLength(data, "htf-8"),
