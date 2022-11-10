@@ -3,8 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <title>Home</title>
+    <link rel="stylesheet" href="/styles/basicStyles.css" />
+    <script src="/js/update.js"></script>
   </head>
   <body>
-    <h1>Home page</h1>
+    <main>
+      <h1>Search page</h1>
+      <p>
+        <label for="key">Key</label>
+        <input type="text" id="key" />
+      </p>
+      <p>
+        <label for="search-value">Value</label>
+        <input type="text" id="search-value" />
+      </p>
+      <button id="submit-btn">Submit</button>
+      <section id="result-section">
+        <table>
+          <thead>
+            <tr>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Age</th>
+            </tr>
+          </thead>
+          <tbody id="result-set"></tbody>
+        </table>
+      </section>
+      <section id="message-section"></section>
+    </main>
   </body>
 </html>
