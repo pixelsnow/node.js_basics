@@ -29,8 +29,14 @@ const server = http.createServer((req, res) => {
     resultJson = { message: "not found" };
   }
 
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.end(JSON.stringify(resultJson));
+  res.writeHead(200, {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+  });
+
+  // null - no filtering
+  // 2 - indentation 2 spaces to make it look nice
+  res.end(JSON.stringify(resultJson, null, 2));
 });
 
 server.listen(port, host, () =>
