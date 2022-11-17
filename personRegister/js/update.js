@@ -2,6 +2,7 @@
 
 "use strict";
 
+// Nameless function that will be run automatically
 (function () {
   let resultSet;
   let resultSection;
@@ -9,7 +10,7 @@
   let searchValueInput;
   let messageSection;
 
-  // Could also use classList for this. probably even better
+  // Could also use classList for this. Probably would be even better
   const showResultSection = () =>
     resultSection.removeAttribute("class", "hidden");
   const hideResultSection = () => resultSection.setAttribute("class", "hidden");
