@@ -9,6 +9,13 @@
   let searchValueInput;
   let messageSection;
 
+  // Could also use classList for this. probably even better
+  const showResultSection = () =>
+    resultSection.removeAttribute("class", "hidden");
+  const hideResultSection = () => resultSection.setAttribute("class", "hidden");
+  const showMessage = () => messageSection.removeAttribute("class", "hidden");
+  const hideMessage = () => messageSection.setAttribute("class", "hidden");
+
   // After DOM is loaded, initialise the page
   document.addEventListener("DOMContentLoaded", init);
 
@@ -37,6 +44,8 @@
 
   function showError(message) {
     messageSection.innerHTML = `<p>${message}</p>`;
+    hideResultSection();
+    showMessage();
   }
 
   function updatePage(searchResult) {
@@ -55,6 +64,8 @@
             `;
       }
       resultSet.innerHTML = htmlString;
+      hideMessage();
+      showResultSection();
     }
   }
 })();
