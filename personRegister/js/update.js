@@ -27,6 +27,19 @@
     messageSection = document.getElementById("message-section");
 
     document.getElementById("submit-btn").addEventListener("click", submit);
+    keyInput.addEventListener("focus", clear);
+    keyInput.addEventListener("change", () => searchValueInput.focus());
+    searchValueInput.addEventListener("change", submit);
+
+    clear();
+    keyInput.focus();
+  }
+
+  function clear() {
+    keyInput.value = "";
+    searchValueInput.value = "";
+    hideMessage();
+    hideResultSection();
   }
 
   async function submit() {
