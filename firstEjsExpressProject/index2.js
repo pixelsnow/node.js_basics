@@ -25,6 +25,8 @@ const users = {
 
 app.get("/", (req, res) => res.sendFile(homePath));
 
+// EJS templates come in handy here
+
 // The action was "/login"
 // Now this page sends something back
 // Before the callback the second argument will be called,
@@ -99,8 +101,6 @@ app.get("/carsif", (req, res) => {
   ];
   res.render("tabledemoif", { cars });
 });
-
-// EJS templates come in handy here
 
 app.listen(port, host, () =>
   console.log(`Server ${host}:${port} is listening...`)
