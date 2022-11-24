@@ -10,6 +10,9 @@ app.set("view engine", "ejs");
 // Telling where to find these views
 app.set("views", path.join(__dirname, "pageTemplates"));
 
+// Setting public folder to public
+app.use(express.static(path.join(__dirname, "public")));
+
 const { port, host } = require("./config.json");
 
 const homePath = path.join(__dirname, "home.html");
@@ -51,6 +54,51 @@ app.get("/users", (req, res) =>
     usernames: Object.keys(users),
   })
 );
+
+app.get("/cars", (req, res) => {
+  const cars = [
+    {
+      model: "Fast GT",
+      licence: "ABC-1",
+    },
+    {
+      model: "Errare",
+      licence: "XYZ-123",
+    },
+    {
+      model: "Fast GT",
+      licence: "HI-1",
+    },
+    {
+      model: "MBW",
+      licence: "A-1",
+    },
+  ];
+  res.render("tabledemo", { cars });
+});
+
+// This version checks if array is empty and gives a different result
+app.get("/carsif", (req, res) => {
+  const cars = [
+    /*     {
+      model: "Fast GT",
+      licence: "ABC-1",
+    },
+    {
+      model: "Errare",
+      licence: "XYZ-123",
+    },
+    {
+      model: "Fast GT",
+      licence: "HI-1",
+    },
+    {
+      model: "MBW",
+      licence: "A-1",
+    }, */
+  ];
+  res.render("tabledemoif", { cars });
+});
 
 // EJS templates come in handy here
 
