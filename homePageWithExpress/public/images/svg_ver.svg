@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 280.43 280.43">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#outer-glow-3);
+        stroke: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-5 {
+        filter: url(#outer-glow-4);
+      }
+
+      .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        filter: url(#outer-glow-1);
+      }
+
+      .cls-7 {
+        filter: url(#outer-glow-2);
+      }
+
+      .cls-8 {
+        filter: url(#outer-glow-5);
+      }
+
+      .cls-9 {
+        filter: url(#outer-glow-8);
+      }
+
+      .cls-10 {
+        filter: url(#outer-glow-7);
+      }
+
+      .cls-11 {
+        filter: url(#outer-glow-6);
+      }
+
+      .cls-12 {
+        fill: #f2e3dd;
+      }
+
+      .cls-13 {
+        fill: #ffc5c5;
+      }
+
+      .cls-14, .cls-15 {
+        fill: #f99;
+      }
+
+      .cls-16, .cls-17 {
+        fill: #9d8edd;
+      }
+
+      .cls-18 {
+        fill: #8cddc7;
+      }
+
+      .cls-2 {
+        stroke: #000;
+      }
+
+      .cls-2, .cls-3, .cls-15 {
+        stroke-linecap: round;
+      }
+
+      .cls-3, .cls-4 {
+        stroke: #9d8edd;
+      }
+
+      .cls-17 {
+        opacity: .5;
+      }
+
+      .cls-15 {
+        stroke: #f99;
+        stroke-linejoin: round;
+        stroke-width: .75px;
+      }
+    </style>
+    <filter id="outer-glow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="1"/>
+      <feFlood flood-color="#fff" flood-opacity="1"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-2" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-2" stdDeviation="1"/>
+      <feFlood flood-color="#fff" flood-opacity="1"/>
+      <feComposite in2="blur-2" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-3" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-3" stdDeviation="1"/>
+      <feFlood flood-color="#fff" flood-opacity="1"/>
+      <feComposite in2="blur-3" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-4" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-4" stdDeviation="1"/>
+      <feFlood flood-color="#fff" flood-opacity="1"/>
+      <feComposite in2="blur-4" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-5" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-5" stdDeviation="1"/>
+      <feFlood flood-color="#fff" flood-opacity="1"/>
+      <feComposite in2="blur-5" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-6" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-6" stdDeviation="1"/>
+      <feFlood flood-color="#fff" flood-opacity="1"/>
+      <feComposite in2="blur-6" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-7" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-7" stdDeviation="1"/>
+      <feFlood flood-color="#fff" flood-opacity="1"/>
+      <feComposite in2="blur-7" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-8" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-8" stdDeviation="1"/>
+      <feFlood flood-color="#fff" flood-opacity="1"/>
+      <feComposite in2="blur-8" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <g>
+      <rect x="102.29" y="85.54" width="76.26" height="42.16"/>
+      <path d="M105.58,126.21v-44.91c0-2.83,2.29-5.12,5.12-5.12h59.41c2.83,0,5.12,2.29,5.12,5.12v44.91c0,.82,.67,1.49,1.49,1.49h4.29c.82,0,1.49-.67,1.49-1.49v-3.1s0-32.5,0-32.5c0-18.23-11.1-33-42.52-33-29.27,0-42.32,11.7-42.32,33v35.59c0,.82,.67,1.49,1.49,1.49h4.93c.82,0,1.49-.67,1.49-1.49Z"/>
+    </g>
+    <rect class="cls-12" x="105.58" y="73.99" width="69.65" height="57.7" rx="14.27" ry="14.27"/>
+    <circle class="cls-14" cx="163.26" cy="118.76" r="3.98"/>
+    <circle class="cls-14" cx="116.26" cy="118.76" r="3.98"/>
+    <polygon class="cls-15" points="139.94 102.63 134.8 116.31 145.36 116.31 139.94 102.63"/>
+    <circle cx="118.23" cy="108.75" r="2.72"/>
+    <line class="cls-2" x1="112.87" y1="106.57" x2="122.74" y2="106.57"/>
+    <circle cx="161.86" cy="108.75" r="2.72"/>
+    <line class="cls-2" x1="156.93" y1="106.57" x2="166.8" y2="106.57"/>
+    <g>
+      <g>
+        <circle class="cls-4" cx="161.86" cy="109.47" r="11.54"/>
+        <circle class="cls-17" cx="161.86" cy="109.47" r="11.54"/>
+        <circle class="cls-6" cx="167.65" cy="102.03" r="1.5"/>
+      </g>
+      <g>
+        <circle class="cls-4" cx="118.23" cy="109.47" r="11.54"/>
+        <circle class="cls-17" cx="118.23" cy="109.47" r="11.54"/>
+        <circle class="cls-7" cx="123.74" cy="102.03" r="1.5"/>
+      </g>
+      <line class="cls-3" x1="130.06" y1="106.75" x2="150.11" y2="106.75"/>
+    </g>
+    <path class="cls-2" d="M136.94,123.02s.2,3.09,3.14,3.09,2.93-3.09,2.93-3.09"/>
+    <rect x="105.16" y="70.54" width="70.07" height="25.81" rx="9.18" ry="9.18"/>
+    <path class="cls-12" d="M178.03,95.24s.66-.91,2.01-.91c1.58,0,.67,5.74,.04,6.56s-2.05,1.39-2.05,1.39v-7.04Z"/>
+  </g>
+  <g id="Layer_2" data-name="Layer 2">
+    <rect class="cls-18" x="68.51" y="130.05" width="142.94" height="95.74" rx="17.15" ry="17.15"/>
+    <path class="cls-13" d="M140.02,188.78c4.92,0,4.03-2.85,4.03-6.33s-.72-12.86-4.03-12.86-4.07,9.69-4.07,12.86-1.17,6.33,4.07,6.33Z"/>
+    <ellipse class="cls-1" cx="139.98" cy="178.58" rx="6.63" ry="1.97"/>
+    <path class="cls-16" d="M139.56,177.6c8.07,0,13.57-2.79,13.57-5.31,0-4.29-6.73-9.57-12.94-9.57-7.16,0-12.94,5.28-12.94,9.85,0,2.27,5.5,5.02,12.3,5.02Z"/>
+    <circle class="cls-5" cx="150.11" cy="171.78" r="1"/>
+    <circle class="cls-8" cx="145.91" cy="173.5" r="1"/>
+    <circle class="cls-11" cx="140.2" cy="174.19" r="1"/>
+    <circle class="cls-10" cx="130.13" cy="171.92" r="1"/>
+    <circle class="cls-9" cx="134.66" cy="173.64" r="1"/>
+  </g>
+</svg>

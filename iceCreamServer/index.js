@@ -32,6 +32,7 @@ const server = http.createServer(async (req, res) => {
       send(res, result);
       // send(res, await read(homePath));
     } else if (isIn(route, ...resourceRoutes)) {
+      // all routes are handled by this one function
       const result = await read(path.join(__dirname, route));
       send(res, result);
     } else if (route === "/all") {

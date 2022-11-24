@@ -42,6 +42,7 @@ const sendError = (res, message, code = 404) => {
   res.end(JSON.stringify({ message }));
 };
 
+// Dots ... mean that we can give any number of parameters to the function
 const isIn = (route, ...routes) => {
   for (const start of routes) {
     if (route.startsWith(start)) return true;
