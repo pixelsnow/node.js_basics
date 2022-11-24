@@ -1,5 +1,9 @@
 # Express app
 
+https://expressjs.com/
+https://expressjs.com/en/4x/api.html
+https://ejs.co/
+
 ## Create folder for the application
 
 ## Create package.json for the app
