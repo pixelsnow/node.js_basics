@@ -1,0 +1,21 @@
+<!-- Template page -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Placeholder for a title -->
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= header1 %></h1>
+    <!-- Echoing back the data -->
+    <!-- Named as name properties from the form -->
+    <p>Username: <%= data.username %></p>
+    <p>Password: <%= data.password %></p>
+    <a href="/">Home</a>
+  </body>
+</html>
+
+<!-- Can't send directly because then it will just show the strings literally,
+    so must render first. -->
