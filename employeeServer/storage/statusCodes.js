@@ -36,4 +36,24 @@ const MESSAGES = {
     code: CODES.ALREADY_IN_USE,
     type: "error",
   }),
+  UPDATE_OK: (id) => ({
+    message: `Employee ${id} was updated`,
+    code: CODES.UPDATE_OK,
+    type: "info",
+  }),
+  NOT_UPDATED: (id) => ({
+    message: `Data for ${id} was not updated`,
+    code: CODES.NOT_UPDATED,
+    type: "error",
+  }),
+  REMOVE_OK: (id) => ({
+    message: `Employee ${id} was removed`,
+    code: CODES.REMOVE_OK,
+    type: "info",
+  }),
+  NOT_REMOVED: (id) => ({
+    message: `Employee ${id} was not removed`,
+    code: CODES.NOT_REMOVED,
+    type: "error",
+  }),
 };
