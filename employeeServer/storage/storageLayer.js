@@ -2,7 +2,7 @@
 
 const path = require("path");
 
-const { adapterFile, storageFile } = require("./storageConfig.json");
+const { key, adapterFile, storageFile } = require("./storageConfig.json");
 
 const { readStorage, writeStorage } = require("./readerWriter.js");
 
@@ -19,9 +19,9 @@ async function getAllFromStorage() {
 
 async function getFromStorage(id) {
   /* const test = await readStorage(storageFilePath);
-  return test.find((item) => item.id == id) || null; */
+  return test.find((item) => item[key] == id) || null; */
   return (
-    (await readStorage(storageFilePath)).find((item) => item.id == id) || null
+    (await readStorage(storageFilePath)).find((item) => item[key] == id) || null
   );
 }
 
@@ -33,7 +33,9 @@ async function addToStorage(newEmployee) {
 
 async function updateStorage(modifiedObject) {
   const storageData = await readStorage(storageFilePath);
-  const oldObject = storageData.find((item) => item.id == modifiedObject.id);
+  const oldObject = storageData.find(
+    (item) => item[key] == modifiedObject[key]
+  );
   if (oldObject) {
     // if object found, update
     Object.assign(oldObject, adapt(modifiedObject));
@@ -42,6 +44,26 @@ async function updateStorage(modifiedObject) {
     return false;
   }
 }
+
+async function removeFromStorage(id) {
+  // reading the data from file
+  const storageData = await readStorage(storageFilePath);
+  // find the index of the value to remove
+  const i = storageData.findIndex((item) => item[key] == id);
+  // if negative was returned, nothing was found
+  if (i < 0) return false;
+  // Remove the item and return
+  storageData.splice(i, 1);
+  return await writeStorage(storageFilePath, storageData);
+}
+
+module.exports = {
+  getAllFromStorage,
+  getFromStorage,
+  addToStorage,
+  updateStorage,
+  removeFromStorage,
+};
 
 // TESTING
 
@@ -57,15 +79,16 @@ async function updateStorage(modifiedObject) {
   salary: "2000",
 })
   .then(console.log)
-  .catch(console.log);
- */
+  .catch(console.log); */
 
-updateStorage({
-  id: "3",
+/* updateStorage({
+  id: "7",
   firstname: "Jesse",
   lastname: "River",
   department: "Marketing",
   salary: "2000",
 })
   .then(console.log)
-  .catch(console.log);
+  .catch(console.log); */
+
+// removeFromStorage(7).then(console.log).catch(console.log);
