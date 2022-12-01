@@ -52,8 +52,10 @@ const MESSAGES = {
     type: "info",
   }),
   NOT_REMOVED: (id) => ({
-    message: `Employee ${id} was not removed`,
+    message: `No employee found with id ${id}. Nothing removed`,
     code: CODES.NOT_REMOVED,
     type: "error",
   }),
 };
+
+module.exports = { CODES, MESSAGES };
