@@ -18,8 +18,8 @@ async function getAllFromStorage() {
 }
 
 async function getFromStorage(id) {
-  const test = await readStorage(storageFilePath);
-  return test.find((item) => item.id == id) || null;
+  /* const test = await readStorage(storageFilePath);
+  return test.find((item) => item.id == id) || null; */
   return (
     (await readStorage(storageFilePath)).find((item) => item.id == id) || null
   );
@@ -47,9 +47,9 @@ async function updateStorage(modifiedObject) {
 
 // getAllFromStorage().then(console.log).catch(console.log);
 // DOESNT WORK
-// getFromStorage(2).then(console.log).catch(console.log);
+getFromStorage(2).then(console.log).catch(console.log);
 
-addToStorage({
+/* addToStorage({
   id: "7",
   firstname: "Jess",
   lastname: "River",
@@ -58,3 +58,4 @@ addToStorage({
 })
   .then(console.log)
   .catch(console.log);
+ */
