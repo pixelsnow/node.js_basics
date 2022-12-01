@@ -49,9 +49,9 @@
 
 #### readerWriter.js
 
-- readStorage()
+- readStorage(storageFile)
   - returns an array of employees / []
-- writeStorage(data)
+- writeStorage(storageFile, data)
   - returns true / false
 
 #### storageLayer.js
