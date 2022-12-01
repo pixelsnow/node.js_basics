@@ -46,8 +46,8 @@ async function updateStorage(modifiedObject) {
 // TESTING
 
 // getAllFromStorage().then(console.log).catch(console.log);
-// DOESNT WORK
-getFromStorage(2).then(console.log).catch(console.log);
+
+//getFromStorage(2).then(console.log).catch(console.log);
 
 /* addToStorage({
   id: "7",
@@ -59,3 +59,13 @@ getFromStorage(2).then(console.log).catch(console.log);
   .then(console.log)
   .catch(console.log);
  */
+
+updateStorage({
+  id: "3",
+  firstname: "Jesse",
+  lastname: "River",
+  department: "Marketing",
+  salary: "2000",
+})
+  .then(console.log)
+  .catch(console.log);
