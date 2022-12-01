@@ -5,9 +5,9 @@ const path = require("path");
 const express = require("express");
 const app = express();
 
-// First we must say what's our template engine
+// First we must say what's our view engine
 app.set("view engine", "ejs");
-// Telling where to find these views
+// Telling where to find these ejs views
 app.set("views", path.join(__dirname, "pageTemplates"));
 
 const { port, host } = require("./config.json");
@@ -27,7 +27,11 @@ app.post("/login", express.urlencoded({ extended: false }), (req, res) => {
   res.render("result", {
     title: "Your data",
     header1: "You sent these:",
-    data: req.body,
+    data: {
+      /* req.body, */
+      username: req.body.username,
+      username: req.body.password,
+    },
   });
   // This is the same as if you give as data an object like this
   /* res.render("result", {
