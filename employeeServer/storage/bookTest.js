@@ -14,6 +14,9 @@ const {
 
 // addToStorage({ number: 3, title: "abcd" }).then(console.log).catch(console.log);
 
-updateStorage({ number: 3, title: "abcde" })
+/* updateStorage({ number: 3, title: "abcde" })
   .then(console.log)
   .catch(console.log);
+ */
+
+// removeFromStorage(3).then(console.log).catch(console.log);
