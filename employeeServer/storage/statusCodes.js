@@ -10,6 +10,8 @@ const CODES = {
   NOT_REMOVED: 8,
 };
 
+// TODO: add parametrisation to make text fit for any data
+
 const MESSAGES = {
   PROGRAM_ERROR: () => ({
     message: "Sorry! Error in our program",

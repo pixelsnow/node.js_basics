@@ -1,5 +1,7 @@
 "use strict";
 
+// TODO: add statuc codes if wanted
+
 const path = require("path");
 
 const { key, adapterFile, storageFile } = require("./storageConfig.json");

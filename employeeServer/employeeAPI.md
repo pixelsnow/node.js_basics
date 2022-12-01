@@ -74,6 +74,7 @@ const CODES = {
   PROGRAM_ERROR: 0,
   NOT_FOUND: 1,
   INSERT_OK: 2,
+  ...
 };
 ```
 
