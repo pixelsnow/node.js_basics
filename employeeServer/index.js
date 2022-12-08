@@ -63,7 +63,7 @@ app.get("/inputform", (req, res) =>
     id: { value: "", readonly: "" },
     firstname: { value: "", readonly: "" },
     lastname: { value: "", readonly: "" },
-    department: { value: "sales", readonly: "readonly" },
+    department: { value: "", readonly: "" },
     salary: { value: "", readonly: "" },
   })
 );
@@ -72,6 +72,47 @@ app.post("/input", (req, res) => {
   if (!req.body) return res.statusCode(500);
   dataStorage
     .insert(req.body)
+    .then((status) => sendStatusPage(res, status))
+    .catch((error) => sendErrorPage(res, error));
+});
+
+app.get("/updateform", (req, res) =>
+  res.render("form", {
+    title: "Update person",
+    header1: "Update person data",
+    action: "/updatedata",
+    id: { value: "", readonly: "" },
+    firstname: { value: "", readonly: "readonly" },
+    lastname: { value: "", readonly: "readonly" },
+    department: { value: "", readonly: "readonly" },
+    salary: { value: "", readonly: "readonly" },
+  })
+);
+
+app.post("/updatedata", (req, res) => {
+  if (!req.body) return res.statusCode(500);
+
+  dataStorage
+    .getOne(req.body.id)
+    .then((employee) =>
+      res.render("form", {
+        title: "Update person",
+        header1: "Update person data",
+        action: "/update",
+        id: { value: employee.id, readonly: "readonly" },
+        firstname: { value: employee.firstname, readonly: "" },
+        lastname: { value: employee.lastname, readonly: "" },
+        department: { value: employee.department, readonly: "" },
+        salary: { value: employee.salary, readonly: "" },
+      })
+    )
+    .catch((error) => sendErrorPage(res, error));
+});
+
+app.post("/update", (req, res) => {
+  if (!req.body) return res.statusCode(500);
+  dataStorage
+    .update(req.body)
     .then((status) => sendStatusPage(res, status))
     .catch((error) => sendErrorPage(res, error));
 });
