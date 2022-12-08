@@ -117,6 +117,26 @@ app.post("/update", (req, res) => {
     .catch((error) => sendErrorPage(res, error));
 });
 
+// Adding one more rule
+app.get("/removePerson", (req, res) =>
+  res.render("getPerson", {
+    title: "Remove",
+    header1: "remove",
+    action: "/removePerson",
+  })
+);
+
+app.post("/removePerson", (req, res) => {
+  // Throw server error if no request body
+  if (!req.body) return res.sendStatus(500);
+  // Otherwise handle data
+  const personId = req.body.id;
+  dataStorage
+    .remove(personId)
+    .then((status) => sendStatusPage(res, status))
+    .catch((error) => sendErrorPage(res, error));
+});
+
 app.listen(port, host, () =>
   console.log(`Server ${host}:${port} is listening...`)
 );
