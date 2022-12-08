@@ -19,7 +19,9 @@ const dataStorage = new DataStorage();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "pages"));
 
+// All forms sent to a server will be automatically encoded thanks to this
 app.use(express.urlencoded({ extended: false }));
+// Public folder will be used for styles and such
 app.use(express.static(path.join(__dirname, "public")));
 
 // home page
@@ -33,6 +35,36 @@ app.get("/all", (req, res) =>
     .then((data) => res.render("allPersons", { result: data }))
 );
 
+// Adding one more rule
+app.get("/getPerson", (req, res) =>
+  res.render("getPerson", {
+    title: "Get",
+    header1: "Get",
+    action: "/getPerson",
+  })
+);
+
+app.post("/getPerson", (req, res) => {
+  // Throw server error if no request body
+  if (!req.body) return res.sendStatus(500);
+  // Otherwise handle data
+  const personId = req.body.id;
+  dataStorage
+    .getOne(personId)
+    .then((employee) => res.render("personPage", { result: employee }))
+    .catch((error) => sendErrorPage(res, error));
+});
+
 app.listen(port, host, () =>
   console.log(`Server ${host}:${port} is listening...`)
 );
+
+// Helper functions
+
+function sendErrorPage(res, error, title = "Error", header1 = "Error") {
+  sendStatusPage(res, error, title, header1);
+}
+
+function sendStatusPage(res, status, title = "Status", header1 = "Status") {
+  return res.render("statusPage", { title, header1, status });
+}
