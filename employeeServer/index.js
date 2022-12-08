@@ -55,6 +55,27 @@ app.post("/getPerson", (req, res) => {
     .catch((error) => sendErrorPage(res, error));
 });
 
+app.get("/inputform", (req, res) =>
+  res.render("form", {
+    title: "Add person",
+    header1: "Add a new person",
+    action: "/input",
+    id: { value: "", readonly: "" },
+    firstname: { value: "", readonly: "" },
+    lastname: { value: "", readonly: "" },
+    department: { value: "sales", readonly: "readonly" },
+    salary: { value: "", readonly: "" },
+  })
+);
+
+app.post("/input", (req, res) => {
+  if (!req.body) return res.statusCode(500);
+  dataStorage
+    .insert(req.body)
+    .then((status) => sendStatusPage(res, status))
+    .catch((error) => sendErrorPage(res, error));
+});
+
 app.listen(port, host, () =>
   console.log(`Server ${host}:${port} is listening...`)
 );
