@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <title>Query result</title>
-    <link rel="stylesheet" href="styles/basicStyles.css">
+    <link rel="stylesheet" href="styles/basicStyles.css" />
   </head>
   <body>
     <main>
       <h1>Person data</h1>
-      <p>Person ID: <%= result.id %></p>
-      <p>Name: <%= result.firstname %> <%= result.lastname %></p>
-      <p>Department: <%= result.department %></p>
-      <p>Salary: €<%= result.salary %></p>
+      <p><span class="legend">Person ID: </span> <%= result.id %></p>
+      <p><span class="legend">Name: </span><%= result.firstname %> <%= result.lastname %></p>
+      <p><span class="legend">Department: </span><%= result.department %></p>
+      <p><span class="legend">Salary: </span>€<%= result.salary %></p>
       <a href="/"><button>Go back to menu</button></a>
     </main>
   </body>
