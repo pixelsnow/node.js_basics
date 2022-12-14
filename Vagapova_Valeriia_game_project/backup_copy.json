@@ -1,0 +1,51 @@
+[
+  {
+    "number": 5,
+    "name": "Jigsaw puzzle",
+    "genre": "board game",
+    "rating": "**",
+    "year": 2018
+  },
+  {
+    "number": 2,
+    "name": "Ladybirds",
+    "genre": "adventure",
+    "rating": "*",
+    "year": 2017
+  },
+  {
+    "number": 4,
+    "name": "U.F.O",
+    "genre": "FPS",
+    "rating": "***",
+    "year": 2015
+  },
+  {
+    "number": 7,
+    "name": "Star Adventure",
+    "genre": "brain-teaser",
+    "rating": "*****",
+    "year": 2010
+  },
+  {
+    "number": 6,
+    "name": "The Rise and Fall of an Empire 22",
+    "genre": "platformer",
+    "rating": "**",
+    "year": 2012
+  },
+  {
+    "number": 3,
+    "name": "Amnesia 2030",
+    "genre": "strategy",
+    "rating": "*",
+    "year": 2005
+  },
+  {
+    "number": 1,
+    "name": "Future 2525",
+    "genre": "brain-twister",
+    "rating": "****",
+    "year": 2011
+  }
+]
