@@ -1,5 +1,6 @@
 {
   "key": "number",
+  "item": "game",
   "adapterFile": "./adapterGames",
   "storageFile": "./Vagapova_Valeriia_games.json"
 }

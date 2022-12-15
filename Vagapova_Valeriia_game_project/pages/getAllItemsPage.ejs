@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Game storage</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/all" class="active">See all games</a>
+          </li>
+          <li>
+            <a href="/find_game">Find a game</a>
+          </li>
+          <li>
+            <a href="/insert_game">Insert a new game</a>
+          </li>
+          <li>
+            <a href="/update_game">Update a game</a>
+          </li>
+          <li>
+            <a href="/delete_game">Delete a game</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>All games</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Rating</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% result.forEach(game => { %>
+          <tr>
+            <td><%= game.number %></td>
+            <td><%= game.name %></td>
+            <td><%= game.genre %></td>
+            <td><%= game.rating %></td>
+            <td><%= game.year %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </main>
+    <footer>Valeriia Vagapova 2022</footer>
+  </body>
+</html>
