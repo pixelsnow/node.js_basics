@@ -15,7 +15,8 @@ const DataStorage = require(path.join(
   storage.storageFolder,
   storage.dataLayer
 ));
-const { item } = require("./storage/storageConfig.json");
+const { item, key } = require("./storage/storageConfig.json");
+const { sendErrorPage, sendStatusPage } = require("./helperFunctions");
 
 const express = require("express");
 const app = express();
@@ -44,6 +45,17 @@ app.get("/find_game", (req, res) => {
   res.render("getOneItemPage", {
     action: "/find_game",
   });
+});
+
+app.post("/find_game", (req, res) => {
+  dataStorage
+    .getOne(req.body[key])
+    .then((data) =>
+      res.render("gamePage", {
+        result: data,
+      })
+    )
+    .catch((err) => sendErrorPage(res, err));
 });
 
 app.get("/insert_game", (req, res) => {

@@ -2,7 +2,7 @@
 
 const { item, key } = require("./storageConfig.json");
 
-const { capitaliseFirstLetter } = require("./helperFunctions");
+const { capitaliseFirstLetter } = require("../helperFunctions");
 
 const CODES = {
   PROGRAM_ERROR: 0,

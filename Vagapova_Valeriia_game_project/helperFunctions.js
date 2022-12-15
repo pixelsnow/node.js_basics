@@ -9,4 +9,4 @@ const sendErrorPage = (res, error, title = "Error", header1 = "Error") =>
 const sendStatusPage = (res, status, title = "Status", header1 = "Status") =>
   res.render("statusPage", { title, header1, status });
 
-module.exports = { capitaliseFirstLetter };
+module.exports = { capitaliseFirstLetter, sendErrorPage, sendStatusPage };
