@@ -18,7 +18,6 @@ const getOneFromStorage = async (keyValue) => {
 };
 
 const insertIntoStorage = async (newObject) => {
-  console.log("inserting", newObject);
   const allData = await readStorage(storageFilePath);
   allData.push(newObject);
   return await writeStorage(storageFilePath, allData);

@@ -77,7 +77,6 @@ app.get("/insert_game", (req, res) => {
 
 app.post("/insert_game_request", (req, res) => {
   if (!req.body) return res.sendStatus(500);
-  console.log(req.body);
   dataStorage
     .insert(req.body)
     .then((status) => sendStatusPage(res, status))
