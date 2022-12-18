@@ -7,6 +7,6 @@ const sendErrorPage = (res, error, title = "Error", header1 = "Error") =>
   sendStatusPage(res, error, title, header1);
 
 const sendStatusPage = (res, status, title = "Status", header1 = "Status") =>
-  res.render("statusPage", { title, header1, status });
+  res.render("statusPage", { status, title, header1 });
 
 module.exports = { capitaliseFirstLetter, sendErrorPage, sendStatusPage };

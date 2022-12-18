@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Find a game</title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
@@ -16,7 +16,11 @@
             <a href="/all">See all games</a>
           </li>
           <li>
-            <a href="/find_game" class="active">Find a game</a>
+            <a href="/find_game"
+            class=<%= action==="/find_game_request" ? "active" : "" %>
+            >
+            Find a game
+            </a>
           </li>
           <li>
             <a href="/insert_game">Insert a new game</a>
@@ -25,13 +29,17 @@
             <a href="/update_game">Update a game</a>
           </li>
           <li>
-            <a href="/delete_game">Delete a game</a>
+            <a href="/delete_game" 
+            class=<%= action==="/delete_game_request" ? "active" : "" %>
+            >
+            Delete a game
+            </a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
-      <h1>Find a game</h1>
+      <h1><%= header1 %></h1>
       <form action="<%= action %>" method="POST">
         <div>
           <label for="number">Enter game number:</label>

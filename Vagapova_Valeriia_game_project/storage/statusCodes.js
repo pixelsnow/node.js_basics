@@ -39,7 +39,7 @@ const MESSAGES = {
     type: "error",
   }),
   ALREADY_IN_USE: (keyValue) => ({
-    message: `${capitaliseFirstLetter(item)} ${keyValue} was already in use`,
+    message: `${capitaliseFirstLetter(item)} ${keyValue} is already in use`,
     code: CODES.ALREADY_IN_USE,
     type: "error",
   }),

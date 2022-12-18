@@ -40,9 +40,9 @@ module.exports = class DataStorage {
       if (!newItem || !newItem[key]) {
         reject(MESSAGES.INPUT_ERROR());
       } else {
-        const item = await getOneFromStorage(keyValue);
+        const item = await getOneFromStorage(newItem[key]);
         if (item) {
-          reject(MESSAGES.ALREADY_IN_USE(newItem.keyValue));
+          reject(MESSAGES.ALREADY_IN_USE(newItem[key]));
         } else {
           // Input is OK and key is not in use
           if (await insertIntoStorage(newItem)) {
@@ -60,15 +60,15 @@ module.exports = class DataStorage {
       if (!updatedItem || !updatedItem[key]) {
         reject(MESSAGES.INPUT_ERROR());
       } else {
-        const item = await getOneFromStorage(keyValue);
+        const item = await getOneFromStorage(updatedItem[key]);
         if (!item) {
           reject(MESSAGES.NOT_FOUND(updatedItem[key]));
         } else {
           // Input is OK and item with needed key is found
-          if (await updateStorage(newItem)) {
-            resolve(MESSAGES.UPDATE_OK(newItem[key]));
+          if (await updateStorage(updatedItem)) {
+            resolve(MESSAGES.UPDATE_OK(updatedItem[key]));
           } else {
-            reject(MESSAGES.NOT_UPDATED(newItem[key]));
+            reject(MESSAGES.NOT_UPDATED(updatedItem[key]));
           }
         }
       }

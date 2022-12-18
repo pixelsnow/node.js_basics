@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/all">See all games</a>
+          </li>
+          <li>
+            <a href="/find_game">Find a game</a>
+          </li>
+          <li>
+            <a href="/insert_game" 
+            class=<%= action==="/insert_game_request" ? "active" : "" %>
+            >
+            Insert a new game</a>
+          </li>
+          <li>
+            <a href="/update_game"
+            class=<%= action==="/update_game_request" ? "active" : "" %>
+            >
+            Update a game</a>
+          </li>
+          <li>
+            <a href="/delete_game">Delete a game</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1><%= header1 %></h1>
+      <form action="<%= action %>" method="POST">
+          <div>
+            <label for="number">Game number</label>
+            <input
+              type="text"
+              id="number"
+              name="number"
+              size="5"
+              value="<%= number.value %>"
+              <%= number.readonly %>
+            />
+          </div>
+          <div>
+            <label for="name">Game title</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              size="50"
+              value="<%= name.value %>"
+              <%= name.readonly %>
+            />
+          </div>
+          <div>
+            <label for="key">Genre</label>
+            <input
+              type="text"
+              id="genre"
+              name="genre"
+              size="25"
+              value="<%= genre.value %>"
+              <%= genre.readonly %>
+            />
+          </div>
+          <div>
+            <label for="key">Rating</label>
+            <input
+              type="text"
+              id="rating"
+              name="rating"
+              size="5"
+              value="<%= rating.value %>"
+              <%= rating.readonly %>
+            />
+          </div>
+          <div>
+            <label for="key">Year of release</label>
+            <input
+              type="text"
+              id="year"
+              name="year"
+              size="4"
+              value="<%= year.value %>"
+              <%= year.readonly %>
+            />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>Valeriia Vagapova 2022</footer>
+  </body>
+</html>

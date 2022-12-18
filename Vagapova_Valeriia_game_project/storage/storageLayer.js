@@ -18,6 +18,7 @@ const getOneFromStorage = async (keyValue) => {
 };
 
 const insertIntoStorage = async (newObject) => {
+  console.log("inserting", newObject);
   const allData = await readStorage(storageFilePath);
   allData.push(newObject);
   return await writeStorage(storageFilePath, allData);
@@ -37,7 +38,7 @@ const removeFromStorage = async (keyValue) => {
   const allData = await readStorage(storageFilePath);
   const objectIndex = allData.findIndex((item) => item[key] == keyValue);
   if (objectIndex < 0) return false;
-  allData.splice(i, 1);
+  allData.splice(objectIndex, 1);
   return await writeStorage(storageFilePath, allData);
 };
 
